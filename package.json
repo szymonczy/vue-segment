@@ -1,10 +1,10 @@
 {
-  "name": "@dansmaculotte/vue-segment",
-  "version": "0.2.9",
+  "name": "@szymonczy/vue-segment",
+  "version": "0.2.9-allowchangingsrc",
   "description": "Vue.js plugin for Segment Analytics.js",
   "license": "MIT",
   "main": "src/index.js",
-  "repository": "https://github.com/dansmaculotte/vue-segment",
+  "repository": "https://github.com/szymonczy/vue-segment",
   "contributors": [
     {
       "name": "Ryan Stuart",

@@ -55,20 +55,23 @@ module.exports = {
 
     analytics.SNIPPET_VERSION = '4.1.0';
 
-    analytics.load = function (key, options) {
+    analytics.load = function (key, settings, src) {
       const script = document.createElement('script')
       script.type = 'text/javascript'
       script.async = true
-      script.src = 'https://cdn.segment.com/analytics.js/v1/'
-        + key + '/analytics.min.js'
+      if(src === '') {
+        src = 'https://cdn.segment.com/analytics.js/v1/'
+          + key + '/analytics.min.js'
+      }
+      script.src = src
 
       const first = document.getElementsByTagName('script')[0]
       first.parentNode.insertBefore(script, first)
-      analytics._loadOptions = options
+      analytics._loadOptions = settings
     }
 
     if (!options.disabled) {
-      analytics.load(options.writeKey, options.settings)
+      analytics.load(options.writeKey, options.settings, options.src)
     }
 
     if (options.router) {
